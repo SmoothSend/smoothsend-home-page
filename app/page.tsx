@@ -13,7 +13,7 @@ export default function HomePage() {
 
       <div className="relative z-10">
         <Header />
-        <main>
+        <main id="main-content" role="main">
           <HeroSection />
           <FeaturesSection />
           <QuickLinksSection />

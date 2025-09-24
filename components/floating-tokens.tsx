@@ -323,7 +323,11 @@ export function FloatingTokens() {
   if (!mounted) return null
 
   return (
-    <div className="floating-tokens">
+    <div 
+      className="floating-tokens" 
+      role="img" 
+      aria-label="Decorative floating cryptocurrency tokens including USDC, Aptos, Avalanche, PayPal USD, Sui, and SmoothSend logos"
+    >
       {cryptoTokens.map((token) => (
         <div
           key={token.id}
@@ -340,6 +344,15 @@ export function FloatingTokens() {
           }}
           onClick={() => handleTokenClick(token.id, token.name)}
           title={`${token.name} (${token.symbol})`}
+          role="button"
+          tabIndex={0}
+          aria-label={`Decorative ${token.name} token`}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault()
+              handleTokenClick(token.id, token.name)
+            }
+          }}
         />
       ))}
     </div>

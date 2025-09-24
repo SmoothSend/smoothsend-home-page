@@ -5,8 +5,19 @@ import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'SmoothSend',
-  description: 'Created by SmoothSend Team'
+  title: 'SmoothSend - Gasless Stablecoin Transfers',
+  description: 'Send stablecoins without gas fees. Pay everything in USDC/USDT. Never worry about native tokens again.',
+  icons: {
+    icon: [
+      {
+        url: '/smoothsendlogo.png',
+        sizes: 'any',
+        type: 'image/png',
+      }
+    ],
+    shortcut: '/smoothsendlogo.png',
+    apple: '/smoothsendlogo.png',
+  },
 }
 
 export default function RootLayout({
@@ -17,6 +28,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
+        <a href="#main-content" className="skip-nav">
+          Skip to main content
+        </a>
         {children}
         <Analytics />
       </body>
