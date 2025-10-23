@@ -7,7 +7,7 @@ export function HeroSection() {
       <div className="container mx-auto px-4 text-center">
         <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm mb-8" role="banner">
           <Zap className="w-4 h-4" aria-hidden="true" />
-          <span>Announcing gasless transfers on Aptos & Avalanche</span>
+          <span>Announcing gasless transfers on Aptos, Avalanche, Base & Arbitrum</span>
           <ArrowRight className="w-4 h-4" aria-hidden="true" />
         </div>
 
@@ -41,12 +41,12 @@ export function HeroSection() {
             asChild
           >
             <a 
-              href="https://avax.smoothsend.xyz" 
+              href="https://evm.smoothsend.xyz" 
               target="_blank" 
               rel="noopener noreferrer"
-              aria-label="Try Avalanche App (opens in new tab)"
+              aria-label="Try EVM Demo - Avalanche, Base & Arbitrum testnets (opens in new tab)"
             >
-              Try Avalanche App
+              Try EVM Demo
               <ArrowRight className="ml-2 w-5 h-5" aria-hidden="true" />
             </a>
           </Button>

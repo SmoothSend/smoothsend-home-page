@@ -10,7 +10,7 @@ const features = [
   {
     icon: Globe,
     title: "Multi-Chain Support",
-    description: "Works seamlessly on Aptos and Avalanche networks",
+    description: "Works seamlessly on Aptos, Avalanche, Base, and Arbitrum networks",
   },
   {
     icon: Code,
