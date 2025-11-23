@@ -5,17 +5,17 @@ const features = [
   {
     icon: Zap,
     title: "True Gasless Experience",
-    description: "Users only need stablecoins - no native tokens required for transactions",
+    description: "Users pay fees in the token they are sending - no native gas tokens required.",
   },
   {
     icon: Globe,
     title: "Multi-Chain Support",
-    description: "Works seamlessly on Aptos, Avalanche, Base, and Arbitrum networks",
+    description: "Works seamlessly on Aptos, Avalanche, Base, and Arbitrum networks.",
   },
   {
     icon: Code,
     title: "Developer-Friendly",
-    description: "Easy to integrate SDK with comprehensive documentation",
+    description: "Easy to integrate SDK with comprehensive documentation for rapid deployment.",
   },
 ]
 
@@ -28,7 +28,7 @@ export function FeaturesSection() {
             Built for the Future of Web3 Payments
           </h2>
           <p className="text-xl text-muted-foreground text-balance max-w-2xl mx-auto">
-            Experience seamless stablecoin transfers without the complexity of gas management
+            Experience seamless token transfers without the complexity of gas management
           </p>
         </div>
 
@@ -36,8 +36,8 @@ export function FeaturesSection() {
           {features.map((feature, index) => (
             <Card key={index} className="card-glow bg-card/50 backdrop-blur-sm border-border/20" role="listitem">
               <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6" aria-hidden="true">
-                  <feature.icon className="w-8 h-8 text-primary" />
+                <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-inner shadow-primary/20" aria-hidden="true">
+                  <feature.icon className="w-8 h-8 text-primary drop-shadow-[0_0_8px_rgba(168,85,247,0.5)]" />
                 </div>
                 <h3 className="text-xl font-semibold mb-4">{feature.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{feature.description}</p>

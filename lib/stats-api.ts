@@ -166,3 +166,4 @@ export async function fetchStatsFromAPI(): Promise<DatabaseStats | null> {
     return null;
   }
 }
+

@@ -6,24 +6,32 @@
 :root {
   /* Updated theme with WCAG 2.1 AA compliant contrast ratios */
   --background: oklch(0.02 0.02 270);
-  --foreground: oklch(0.98 0.01 270); /* High contrast white on dark */
+  --foreground: oklch(0.98 0.01 270);
+  /* High contrast white on dark */
   --card: oklch(0.05 0.03 270);
-  --card-foreground: oklch(0.98 0.01 270); /* Improved contrast */
+  --card-foreground: oklch(0.98 0.01 270);
+  /* Improved contrast */
   --popover: oklch(0.05 0.03 270);
   --popover-foreground: oklch(0.98 0.01 270);
-  --primary: oklch(0.70 0.25 270); /* Lightened for better contrast */
+  --primary: oklch(0.70 0.25 270);
+  /* Lightened for better contrast */
   --primary-foreground: oklch(0.98 0.01 270);
   --secondary: oklch(0.15 0.05 270);
-  --secondary-foreground: oklch(0.90 0.02 270); /* Improved contrast */
+  --secondary-foreground: oklch(0.90 0.02 270);
+  /* Improved contrast */
   --muted: oklch(0.1 0.03 270);
-  --muted-foreground: oklch(0.70 0.02 270); /* Improved contrast from 0.6 to 0.7 */
-  --accent: oklch(0.60 0.2 240); /* Lightened for better contrast */
+  --muted-foreground: oklch(0.70 0.02 270);
+  /* Improved contrast from 0.6 to 0.7 */
+  --accent: oklch(0.60 0.2 240);
+  /* Lightened for better contrast */
   --accent-foreground: oklch(0.98 0.01 270);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.98 0.01 270);
-  --border: oklch(0.20 0.05 270); /* Lightened for visibility */
+  --border: oklch(0.20 0.05 270);
+  /* Lightened for visibility */
   --input: oklch(0.1 0.03 270);
-  --ring: oklch(0.70 0.25 270); /* Focus ring - high contrast */
+  --ring: oklch(0.70 0.25 270);
+  /* Focus ring - high contrast */
   --chart-1: oklch(0.70 0.25 270);
   --chart-2: oklch(0.60 0.2 240);
   --chart-3: oklch(0.50 0.15 210);
@@ -120,19 +128,21 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
+    cursor: none;
   }
-  
+
   /* WCAG 2.1 AA Accessibility Improvements */
-  
+
   /* Enhanced focus indicators for keyboard navigation */
   *:focus-visible {
     outline: 2px solid oklch(0.70 0.25 270);
     outline-offset: 2px;
     border-radius: 4px;
   }
-  
+
   /* Ensure interactive elements have proper focus */
   a:focus-visible,
   button:focus-visible,
@@ -144,7 +154,7 @@
     outline-offset: 2px;
     box-shadow: 0 0 0 2px oklch(0.02 0.02 270), 0 0 0 5px oklch(0.70 0.25 270 / 0.3);
   }
-  
+
   /* Skip navigation link for keyboard users */
   .skip-nav {
     position: absolute;
@@ -159,22 +169,22 @@
     z-index: 1000;
     transition: top 0.3s;
   }
-  
+
   .skip-nav:focus {
     top: 6px;
   }
-  
+
   /* Improved link visibility */
   a {
     color: oklch(0.75 0.25 270);
     text-decoration-skip-ink: auto;
   }
-  
+
   a:hover {
     color: oklch(0.80 0.25 270);
     text-decoration: underline;
   }
-  
+
   /* High contrast mode support */
   @media (prefers-contrast: high) {
     :root {
@@ -185,20 +195,23 @@
       --border: oklch(0.50 0.05 270);
     }
   }
-  
+
   /* Reduced motion support */
   @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
+
+    *,
+    *::before,
+    *::after {
       animation-duration: 0.01ms !important;
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
     }
-    
+
     .floating-tokens {
       display: none;
     }
   }
-  
+
   /* Screen reader only utility class */
   .sr-only {
     position: absolute;
@@ -294,18 +307,22 @@
     transform: translateY(0px) translateX(0px) rotate(0deg) scale(1);
     opacity: 0.6;
   }
+
   25% {
     transform: translateY(-20px) translateX(10px) rotate(90deg) scale(1.1);
     opacity: 0.8;
   }
+
   50% {
     transform: translateY(-10px) translateX(-5px) rotate(180deg) scale(0.9);
     opacity: 0.7;
   }
+
   75% {
     transform: translateY(-30px) translateX(-15px) rotate(270deg) scale(1.05);
     opacity: 0.9;
   }
+
   100% {
     transform: translateY(0px) translateX(0px) rotate(360deg) scale(1);
     opacity: 0.6;
@@ -313,11 +330,13 @@
 }
 
 @keyframes pulse {
+
   0%,
   100% {
     transform: translate(-50%, -50%) scale(0.8);
     opacity: 0.8;
   }
+
   50% {
     transform: translate(-50%, -50%) scale(1.2);
     opacity: 0.4;
@@ -330,18 +349,22 @@
     transform: translateY(0px) translateX(0px) rotate(0deg) scale(1);
     opacity: 0.6;
   }
+
   25% {
     transform: translateY(15px) translateX(-8px) rotate(-90deg) scale(0.9);
     opacity: 0.8;
   }
+
   50% {
     transform: translateY(5px) translateX(12px) rotate(-180deg) scale(1.1);
     opacity: 0.7;
   }
+
   75% {
     transform: translateY(25px) translateX(18px) rotate(-270deg) scale(0.95);
     opacity: 0.9;
   }
+
   100% {
     transform: translateY(0px) translateX(0px) rotate(-360deg) scale(1);
     opacity: 0.6;
@@ -358,7 +381,7 @@
   .floating-tokens .token:nth-child(n+8) {
     display: none;
   }
-  
+
   .floating-tokens .token {
     width: 40px !important;
     height: 40px !important;
@@ -369,7 +392,7 @@
   .floating-tokens .token:nth-child(n+4) {
     display: none;
   }
-  
+
   .floating-tokens .token {
     width: 35px !important;
     height: 35px !important;
@@ -380,4 +403,49 @@
   .floating-tokens {
     display: none;
   }
+}
+
+/* 3D Transform Utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+@keyframes aurora {
+  from {
+    background-position: 50% 50%, 50% 50%;
+  }
+
+  to {
+    background-position: 350% 50%, 350% 50%;
+  }
+}
+
+.animate-aurora {
+  animation: aurora 60s linear infinite;
+}
+
+/* Scrollbar hiding for cleaner look */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: oklch(0.20 0.05 270);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: oklch(0.30 0.05 270);
 }

@@ -1,4 +1,5 @@
 import { Github, Twitter, FileText } from "lucide-react"
+import Image from "next/image"
 
 export function Footer() {
   return (
@@ -7,16 +8,21 @@ export function Footer() {
         <div className="grid md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-sm">S</span>
+              <div className="relative w-8 h-8">
+                <Image
+                  src="/Logo.svg"
+                  alt="SmoothSend Logo"
+                  fill
+                  className="object-contain"
+                />
               </div>
               <div>
                 <h3 className="text-lg font-bold text-foreground">SmoothSend</h3>
-                <p className="text-xs text-muted-foreground">Gasless Stablecoin Transfers</p>
+                <p className="text-xs text-muted-foreground">Gasless Transactions</p>
               </div>
             </div>
-            <p className="text-muted-foreground mb-6 leading-relaxed">
-              Built for the future of Web3 payments. Send stablecoins without worrying about gas fees.
+            <p className="text-muted-foreground mb-6 leading-relaxed max-w-sm">
+              Built for the future of Web3 payments. Send tokens without worrying about gas fees.
             </p>
             <div className="flex space-x-4">
               <a
@@ -61,12 +67,33 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="https://avax.smoothsend.xyz"
+                  href="https://evm.smoothsend.xyz"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  Avalanche dApp
+                  EVM dApp
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="font-semibold mb-4">Contact</h3>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li>
+                <a href="mailto:contact@smoothsend.xyz" className="hover:text-primary transition-colors">
+                  contact@smoothsend.xyz
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/smoothsend" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+                  Twitter
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/smoothsend" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+                  GitHub
                 </a>
               </li>
             </ul>

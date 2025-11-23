@@ -24,6 +24,21 @@ interface Chain {
 
 const chains: Chain[] = [
   {
+    id: "aptos",
+    name: "Aptos",
+    logo: "/aptos-apt-logo.png",
+    color: "bg-primary/20",
+    description: "Next-gen blockchain with Move language",
+    features: ["Move language", "Parallel execution", "High throughput", "Developer friendly"],
+    stats: {
+      transactions: "980K+",
+      avgTime: "<2s",
+      gasSaved: "$420K"
+    },
+    testnetUrl: "https://aptos.smoothsend.xyz",
+    mainnetUrl: "https://aptos.smoothsend.xyz"
+  },
+  {
     id: "base",
     name: "Base",
     logo: "/base-logo.svg",
@@ -67,21 +82,6 @@ const chains: Chain[] = [
     },
     testnetUrl: "https://evm.smoothsend.xyz",
     mainnetUrl: "https://evm.smoothsend.xyz"
-  },
-  {
-    id: "aptos",
-    name: "Aptos",
-    logo: "/aptos-apt-logo.png",
-    color: "bg-primary/20",
-    description: "Next-gen blockchain with Move language",
-    features: ["Move language", "Parallel execution", "High throughput", "Developer friendly"],
-    stats: {
-      transactions: "980K+",
-      avgTime: "<2s",
-      gasSaved: "$420K"
-    },
-    testnetUrl: "https://aptos.smoothsend.xyz",
-    mainnetUrl: "https://aptos.smoothsend.xyz"
   }
 ]
 
@@ -114,17 +114,16 @@ export function ChainShowcaseSection() {
             <Button
               key={chain.id}
               variant={selectedChain.id === chain.id ? "default" : "outline"}
-              className={`px-6 py-3 transition-all duration-300 ${
-                selectedChain.id === chain.id 
-                  ? 'bg-primary text-primary-foreground border-primary' 
-                  : 'hover:bg-primary/10 border-primary/30'
-              }`}
+              className={`px-6 py-3 transition-all duration-300 ${selectedChain.id === chain.id
+                ? 'bg-primary text-primary-foreground border-primary'
+                : 'hover:bg-primary/10 border-primary/30'
+                }`}
               onClick={() => setSelectedChain(chain)}
               onMouseEnter={() => setHoveredChain(chain.id)}
               onMouseLeave={() => setHoveredChain(null)}
             >
-              <img 
-                src={chain.logo} 
+              <img
+                src={chain.logo}
                 alt={chain.name}
                 className="w-6 h-6 mr-2"
               />
@@ -140,8 +139,8 @@ export function ChainShowcaseSection() {
             <CardContent className="p-8">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center border border-primary/20 overflow-hidden">
-                  <img 
-                    src={selectedChain.logo} 
+                  <img
+                    src={selectedChain.logo}
                     alt={selectedChain.name}
                     className={`w-10 h-10 ${selectedChain.id === 'aptos' ? 'rounded-full' : ''}`}
                   />
@@ -195,12 +194,12 @@ export function ChainShowcaseSection() {
               </div>
 
               <div className="flex gap-4">
-                <Button 
-                  size="lg" 
+                <Button
+                  size="lg"
                   className="flex-1"
                   asChild
                 >
-                  <a 
+                  <a
                     href={selectedChain.testnetUrl}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -219,7 +218,7 @@ export function ChainShowcaseSection() {
               <h3 className="text-xl font-bold text-foreground mb-6">
                 Why {selectedChain.name} + SmoothSend?
               </h3>
-              
+
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 bg-green-500/10 rounded-xl flex items-center justify-center flex-shrink-0">
@@ -230,7 +229,7 @@ export function ChainShowcaseSection() {
                       Zero Gas Fees
                     </h4>
                     <p className="text-muted-foreground text-sm">
-                      Send stablecoins without holding native tokens
+                      Send tokens without holding native gas
                     </p>
                   </div>
                 </div>
@@ -284,19 +283,18 @@ export function ChainShowcaseSection() {
         {/* All Chains Overview */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
           {chains.map((chain) => (
-            <Card 
+            <Card
               key={chain.id}
-              className={`card-glow bg-card/50 backdrop-blur-sm border-border/20 hover:scale-105 transition-all duration-300 cursor-pointer ${
-                hoveredChain === chain.id ? 'ring-2 ring-primary/50' : ''
-              }`}
+              className={`card-glow bg-card/50 backdrop-blur-sm border-border/20 hover:scale-105 transition-all duration-300 cursor-pointer ${hoveredChain === chain.id ? 'ring-2 ring-primary/50' : ''
+                }`}
               onClick={() => setSelectedChain(chain)}
               onMouseEnter={() => setHoveredChain(chain.id)}
               onMouseLeave={() => setHoveredChain(null)}
             >
               <CardContent className="p-4 text-center">
                 <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3 border border-primary/20 overflow-hidden">
-                  <img 
-                    src={chain.logo} 
+                  <img
+                    src={chain.logo}
                     alt={chain.name}
                     className={`w-8 h-8 ${chain.id === 'aptos' ? 'rounded-full' : ''}`}
                   />
