@@ -1,5 +1,6 @@
 import { Github, Twitter, FileText } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 export function Footer() {
   return (
@@ -134,10 +135,38 @@ export function Footer() {
               </li>
             </ul>
           </div>
+
+          <div>
+            <h4 className="font-semibold mb-4">Legal</h4>
+            <ul className="space-y-2">
+              <li>
+                <Link
+                  href="/terms"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Terms of Service
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/privacy"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Privacy Policy
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
 
         <div className="border-t border-border/20 mt-8 pt-8 text-center">
-          <p className="text-muted-foreground">© 2025 SmoothSend. Built for the future of Web3 payments.</p>
+          <p className="text-muted-foreground text-sm">
+            © 2025 SmoothSend. Built for the future of Web3 payments.
+            <span className="mx-2">·</span>
+            <Link href="/terms" className="hover:text-foreground transition-colors">Terms</Link>
+            <span className="mx-2">·</span>
+            <Link href="/privacy" className="hover:text-foreground transition-colors">Privacy</Link>
+          </p>
         </div>
       </div>
     </footer>
