@@ -140,8 +140,8 @@ export default function TermsOfService() {
             <h2 className="text-2xl font-semibold mb-4 text-white">12. Contact</h2>
             <p className="text-gray-300 leading-relaxed">
               For questions about these Terms, please contact us at{' '}
-              <a href="mailto:support@smoothsend.xyz" className="text-blue-400 hover:text-blue-300">
-                support@smoothsend.xyz
+              <a href="mailto:contact@smoothsend.xyz" className="text-blue-400 hover:text-blue-300">
+                contact@smoothsend.xyz
               </a>
               {' '}or via our{' '}
               <a href="https://twitter.com/smoothsend" className="text-blue-400 hover:text-blue-300" target="_blank" rel="noopener noreferrer">

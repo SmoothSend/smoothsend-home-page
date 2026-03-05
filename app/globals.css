@@ -131,7 +131,6 @@
 
   body {
     @apply bg-background text-foreground;
-    cursor: none;
   }
 
   /* WCAG 2.1 AA Accessibility Improvements */

@@ -161,7 +161,7 @@ export function Footer() {
 
         <div className="border-t border-border/20 mt-8 pt-8 text-center">
           <p className="text-muted-foreground text-sm">
-            © 2025 SmoothSend. Built for the future of Web3 payments.
+            © {new Date().getFullYear()} SmoothSend. Built for the future of Web3 payments.
             <span className="mx-2">·</span>
             <Link href="/terms" className="hover:text-foreground transition-colors">Terms</Link>
             <span className="mx-2">·</span>

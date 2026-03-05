@@ -42,8 +42,6 @@ export const metadata: Metadata = {
   },
 }
 
-import { CustomCursor } from "@/components/ui/custom-cursor"
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -52,7 +50,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
-        <CustomCursor />
         <a href="#main-content" className="skip-nav">
           Skip to main content
         </a>
