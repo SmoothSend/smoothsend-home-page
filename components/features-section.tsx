@@ -5,17 +5,20 @@ const features = [
   {
     icon: Zap,
     title: "True Gasless Experience",
-    description: "Users pay fees in the token they are sending - no native gas tokens required.",
+    description:
+      "Users pay fees in the stablecoin they are sending — no ETH, AVAX, or APT required. The SmoothSend paymaster relayer sponsors gas via ERC-4337 account abstraction.",
   },
   {
     icon: Globe,
     title: "Multi-Chain Support",
-    description: "Works seamlessly on Aptos, Avalanche, Base, and Arbitrum networks.",
+    description:
+      "One SDK, four chains: Aptos (sponsored transactions), Avalanche C-Chain, Base (Coinbase L2), and Arbitrum One. Mainnet and testnet supported.",
   },
   {
     icon: Code,
     title: "Developer-Friendly",
-    description: "Easy to integrate SDK with comprehensive documentation for rapid deployment.",
+    description:
+      "Integrate gasless transfers with @smoothsend/sdk in minutes. Full TypeScript support, React wallet adapter, REST API, and comprehensive documentation.",
   },
 ]
 
@@ -28,7 +31,7 @@ export function FeaturesSection() {
             Built for the Future of Web3 Payments
           </h2>
           <p className="text-xl text-muted-foreground text-balance max-w-2xl mx-auto">
-            Experience seamless token transfers without the complexity of gas management
+            ERC-4337 account abstraction and Aptos sponsored transactions — gasless transfers without the complexity
           </p>
         </div>
 

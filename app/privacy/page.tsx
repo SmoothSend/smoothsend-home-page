@@ -1,7 +1,14 @@
-'use client'
-
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy | SmoothSend',
+  description: "SmoothSend's Privacy Policy. Learn how we collect, use, and protect your data when using our gasless stablecoin transaction service.",
+  alternates: {
+    canonical: 'https://www.smoothsend.xyz/privacy',
+  },
+}
 
 export default function PrivacyPolicy() {
   return (

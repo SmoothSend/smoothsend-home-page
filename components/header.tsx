@@ -10,12 +10,14 @@ export function Header() {
               <img
                 src="/Logo.svg"
                 alt="SmoothSend logo"
-                className="w-8 h-8 object-contain"
+                width="32"
+                height="32"
+                className="object-contain"
               />
             </a>
             <div>
-              <h1 className="text-xl font-bold text-foreground">SmoothSend</h1>
-              <p className="text-xs text-muted-foreground">Gasless Token Transfers</p>
+              <span className="text-xl font-bold text-foreground">SmoothSend</span>
+              <p className="text-xs text-muted-foreground">Gasless Stablecoin Payments</p>
             </div>
           </div>
 

@@ -1,7 +1,14 @@
-'use client'
-
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
+
+export const metadata: Metadata = {
+  title: 'Terms of Service | SmoothSend',
+  description: 'Terms of Service for SmoothSend — the gasless stablecoin payment protocol. Understand your rights and responsibilities when using our ERC-4337 relayer service.',
+  alternates: {
+    canonical: 'https://www.smoothsend.xyz/terms',
+  },
+}
 
 export default function TermsOfService() {
   return (
