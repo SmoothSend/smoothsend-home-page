@@ -8,10 +8,12 @@ import { ChainShowcaseSection } from "@/components/chain-showcase-section"
 import { TestimonialsSection } from "@/components/testimonials-section"
 import { QuickLinksSection } from "@/components/quick-links-section"
 import { HowItWorksSection } from "@/components/how-it-works-section"
+import { PilotBanner } from "@/components/pilot-banner"
 
 export default function HomePage() {
   return (
     <ScrollStoryContainer>
+      <PilotBanner />
       <Header />
 
       <main className="flex flex-col">
