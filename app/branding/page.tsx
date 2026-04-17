@@ -1,12 +1,13 @@
 'use client'
 
 import { useState } from 'react'
-import { Check, Copy, ArrowLeft, Download } from 'lucide-react'
+import { Check, Copy, ArrowLeft, Download, Link as LinkIcon } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 
 export default function BrandingPage() {
   const [copiedColor, setCopiedColor] = useState<string | null>(null)
+  const [copiedLogo, setCopiedLogo] = useState<string | null>(null)
 
   const copyToClipboard = (text: string, type: 'color' | 'font') => {
     navigator.clipboard.writeText(text)
@@ -14,6 +15,13 @@ export default function BrandingPage() {
       setCopiedColor(text)
       setTimeout(() => setCopiedColor(null), 2000)
     }
+  }
+
+  const copyUrlToClipboard = (src: string) => {
+    const url = window.location.origin + src
+    navigator.clipboard.writeText(url)
+    setCopiedLogo(src)
+    setTimeout(() => setCopiedLogo(null), 2000)
   }
 
   const colors = [
@@ -79,14 +87,23 @@ export default function BrandingPage() {
                 </div>
                 <div className="p-4 flex items-center justify-between bg-card">
                   <span className="font-medium text-sm">{logo.name}</span>
-                  <a 
-                    href={logo.src} 
-                    download 
-                    className="p-2 bg-muted/50 hover:bg-muted rounded-full transition-colors"
-                    title={`Download ${logo.name}`}
-                  >
-                    <Download className="w-4 h-4" />
-                  </a>
+                  <div className="flex items-center gap-2">
+                    <button
+                      onClick={() => copyUrlToClipboard(logo.src)}
+                      className="p-2 bg-muted/50 hover:bg-muted rounded-full transition-colors relative"
+                      title={`Copy URL for ${logo.name}`}
+                    >
+                      {copiedLogo === logo.src ? <Check className="w-4 h-4 text-green-500" /> : <LinkIcon className="w-4 h-4" />}
+                    </button>
+                    <a 
+                      href={logo.src} 
+                      download 
+                      className="p-2 bg-muted/50 hover:bg-muted rounded-full transition-colors"
+                      title={`Download ${logo.name}`}
+                    >
+                      <Download className="w-4 h-4" />
+                    </a>
+                  </div>
                 </div>
               </div>
             ))}
@@ -126,7 +143,17 @@ export default function BrandingPage() {
         <section className="space-y-8">
           <div className="space-y-2">
             <h2 className="text-3xl font-semibold tracking-tight">Typography</h2>
-            <p className="text-muted-foreground">We use Inter for all web typography to ensure maximum legibility and a modern aesthetic.</p>
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <p className="text-muted-foreground">We use Inter for all web typography to ensure maximum legibility and a modern aesthetic.</p>
+              <a 
+                href="https://fonts.google.com/specimen/Inter" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm font-medium hover:underline text-[#7595FF]"
+              >
+                Get Inter from Google Fonts
+              </a>
+            </div>
           </div>
 
           <div className="p-8 md:p-12 rounded-3xl border border-border/50 bg-card space-y-12">
