@@ -96,5 +96,4 @@ MIT
 
 ---
 
-Built with ❤️ by the SmoothSend Team
-# smoothsend-home-page
+Built with ❤ ️ by the SmoothSend Team

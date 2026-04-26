@@ -1,26 +1,26 @@
 import { Card, CardContent } from "@/components/ui/card"
-import { Wallet, Send, FileSignature, CheckCircle } from "lucide-react"
+import { Code2, Settings2, Route, BarChart3 } from "lucide-react"
 
 const steps = [
   {
-    icon: Wallet,
-    title: "Connect your wallet",
-    description: "Link your Web3 wallet to get started",
+    icon: Code2,
+    title: "Integrate SDK",
+    description: "Add SmoothSend to your app with a minimal SDK or API integration.",
   },
   {
-    icon: Send,
-    title: "Enter recipient and amount",
-    description: "Specify the destination address and USDC/USDT amount",
+    icon: Settings2,
+    title: "Configure sponsorship rules",
+    description: "Set chain, project policy, and function-level sponsorship in the dashboard.",
   },
   {
-    icon: FileSignature,
-    title: "Sign message (no gas needed)",
-    description: "Authorize the transaction with just a signature",
+    icon: Route,
+    title: "Route transactions through SmoothSend",
+    description: "Gateway and relayer infrastructure handles fee-payer execution for your users.",
   },
   {
-    icon: CheckCircle,
-    title: "Transfer completes automatically",
-    description: "Your stablecoins are sent without any gas fees",
+    icon: BarChart3,
+    title: "Observe and iterate",
+    description: "Track usage, credits, and project performance while shipping new features quickly.",
   },
 ]
 
@@ -31,7 +31,7 @@ export function HowItWorksSection() {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-balance mb-4">How It Works</h2>
           <p className="text-xl text-muted-foreground text-balance max-w-2xl mx-auto">
-            Send stablecoins in four simple steps - no gas tokens required
+            A developer-first flow for shipping gas abstraction without maintaining relayer infrastructure.
           </p>
         </div>
 

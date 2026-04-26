@@ -3,23 +3,18 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Zap, Clock, DollarSign, Shield, ArrowRight } from "lucide-react"
+import { Zap, Clock, Shield, ArrowRight } from "lucide-react"
 import { useState, useEffect } from "react"
 
 interface Chain {
   id: string
   name: string
   logo: string
-  color: string
   description: string
-  features: string[]
-  stats: {
-    transactions: string
-    avgTime: string
-    gasSaved: string
-  }
+  status: string
+  capabilities: string[]
   testnetUrl: string
-  mainnetUrl?: string
+  comingSoon?: boolean
 }
 
 const chains: Chain[] = [
@@ -27,62 +22,48 @@ const chains: Chain[] = [
     id: "aptos",
     name: "Aptos",
     logo: "/aptos-apt-logo.png",
-    color: "bg-primary/20",
-    description: "Next-gen blockchain with Move language",
-    features: ["Move language", "Parallel execution", "High throughput", "Developer friendly"],
-    stats: {
-      transactions: "980K+",
-      avgTime: "<2s",
-      gasSaved: "$420K"
-    },
+    description: "High-performance chain with native sponsorship support.",
+    status: "Mainnet + Testnet",
+    capabilities: ["Sponsored transactions", "Wallet adapter support", "Production ready"],
     testnetUrl: "https://aptos.smoothsend.xyz",
-    mainnetUrl: "https://aptos.smoothsend.xyz"
   },
   {
     id: "base",
     name: "Base",
     logo: "/base-logo.svg",
-    color: "bg-primary/20",
-    description: "Coinbase's L2 for the next billion users",
-    features: ["Low fees", "Fast finality", "EVM compatible", "Coinbase integration"],
-    stats: {
-      transactions: "2.1M+",
-      avgTime: "<1s",
-      gasSaved: "$890K"
-    },
+    description: "EVM chain with seamless gas abstraction flows.",
+    status: "Testnet",
+    capabilities: ["ERC-4337 support", "Stablecoin-first UX", "Testnet access"],
     testnetUrl: "https://evm.smoothsend.xyz",
-    mainnetUrl: "https://evm.smoothsend.xyz"
   },
   {
     id: "arbitrum",
     name: "Arbitrum",
     logo: "/arbitrum-arb-logo.svg",
-    color: "bg-accent/20",
-    description: "Leading Ethereum L2 scaling solution",
-    features: ["High throughput", "Low costs", "EVM compatible", "DeFi ecosystem"],
-    stats: {
-      transactions: "1.8M+",
-      avgTime: "<2s",
-      gasSaved: "$1.2M"
-    },
+    description: "EVM L2 support for gasless product experiences.",
+    status: "Testnet",
+    capabilities: ["ERC-4337 support", "Broad wallet compatibility", "Testnet access"],
     testnetUrl: "https://evm.smoothsend.xyz",
-    mainnetUrl: "https://evm.smoothsend.xyz"
   },
   {
     id: "avalanche",
     name: "Avalanche",
     logo: "/avalanche-avax-logo.svg",
-    color: "bg-secondary/20",
-    description: "Fast, low-cost blockchain platform",
-    features: ["Sub-second finality", "Low fees", "Custom VMs", "Institutional grade"],
-    stats: {
-      transactions: "1.5M+",
-      avgTime: "<1s",
-      gasSaved: "$650K"
-    },
+    description: "Fast EVM execution with gasless-ready infrastructure.",
+    status: "Testnet",
+    capabilities: ["ERC-4337 support", "Stablecoin transfer UX", "Testnet access"],
     testnetUrl: "https://evm.smoothsend.xyz",
-    mainnetUrl: "https://evm.smoothsend.xyz"
-  }
+  },
+  {
+    id: "solana",
+    name: "Solana",
+    logo: "/solanaLogoMark.svg",
+    description: "Next chain in the SmoothSend multi-chain rollout.",
+    status: "Coming soon",
+    capabilities: ["Integration in progress", "Developer preview soon", "Roadmap active"],
+    testnetUrl: "https://docs.smoothsend.xyz",
+    comingSoon: true,
+  },
 ]
 
 export function ChainShowcaseSection() {
@@ -101,10 +82,10 @@ export function ChainShowcaseSection() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-balance mb-4">
-            Multi-Chain Support
+            Multi-Chain Coverage
           </h2>
           <p className="text-xl text-muted-foreground text-balance max-w-2xl mx-auto">
-            Experience gasless transactions across multiple blockchain networks
+            Build once and ship gasless UX across chains. Solana support is coming soon.
           </p>
         </div>
 
@@ -152,44 +133,20 @@ export function ChainShowcaseSection() {
                   <p className="text-muted-foreground">
                     {selectedChain.description}
                   </p>
+                  <Badge variant="outline" className="mt-2">
+                    {selectedChain.status}
+                  </Badge>
                 </div>
               </div>
 
               <div className="space-y-4 mb-8">
-                <h4 className="font-semibold text-foreground">Key Features:</h4>
+                <h4 className="font-semibold text-foreground">Capabilities:</h4>
                 <div className="flex flex-wrap gap-2">
-                  {selectedChain.features.map((feature, index) => (
+                  {selectedChain.capabilities.map((feature, index) => (
                     <Badge key={index} variant="secondary" className="px-3 py-1">
                       {feature}
                     </Badge>
                   ))}
-                </div>
-              </div>
-
-              <div className="grid grid-cols-3 gap-4 mb-8">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">
-                    {selectedChain.stats.transactions}
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    Transactions
-                  </div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">
-                    {selectedChain.stats.avgTime}
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    Avg. Time
-                  </div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">
-                    {selectedChain.stats.gasSaved}
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    Gas Saved
-                  </div>
                 </div>
               </div>
 
@@ -204,7 +161,7 @@ export function ChainShowcaseSection() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Try {selectedChain.name} Demo
+                    {selectedChain.comingSoon ? "View Roadmap Updates" : `Try ${selectedChain.name} Demo`}
                     <ArrowRight className="ml-2 w-4 h-4" />
                   </a>
                 </Button>
@@ -240,24 +197,24 @@ export function ChainShowcaseSection() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground mb-1">
-                      Lightning Fast
+                      Production Ready
                     </h4>
                     <p className="text-muted-foreground text-sm">
-                      Transactions complete in under 2 seconds
+                      Built for live applications with reliable relayer infrastructure
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 bg-purple-500/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <DollarSign className="w-5 h-5 text-purple-400" />
+                    <Zap className="w-5 h-5 text-purple-400" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground mb-1">
-                      Cost Effective
+                      Developer First
                     </h4>
                     <p className="text-muted-foreground text-sm">
-                      Save up to 90% compared to traditional methods
+                      Unified SDK and API surface designed for fast shipping
                     </p>
                   </div>
                 </div>
@@ -268,10 +225,10 @@ export function ChainShowcaseSection() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground mb-1">
-                      Secure & Reliable
+                      Security Focused
                     </h4>
                     <p className="text-muted-foreground text-sm">
-                      99.9% uptime with enterprise-grade security
+                      Gateway-authenticated relayer architecture for safer execution
                     </p>
                   </div>
                 </div>
@@ -302,11 +259,8 @@ export function ChainShowcaseSection() {
                 <h4 className="font-semibold text-foreground mb-1">
                   {chain.name}
                 </h4>
-                <p className="text-xs text-muted-foreground mb-2">
-                  {chain.stats.transactions} txs
-                </p>
                 <Badge variant="outline" className="text-xs">
-                  {chain.stats.avgTime}
+                  {chain.status}
                 </Badge>
               </CardContent>
             </Card>

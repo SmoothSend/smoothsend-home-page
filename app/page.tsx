@@ -9,6 +9,7 @@ import { TestimonialsSection } from "@/components/testimonials-section"
 import { QuickLinksSection } from "@/components/quick-links-section"
 import { HowItWorksSection } from "@/components/how-it-works-section"
 import { PilotBanner } from "@/components/pilot-banner"
+import { TrustedBySection } from "@/components/trusted-by-section"
 
 export default function HomePage() {
   return (
@@ -22,6 +23,10 @@ export default function HomePage() {
 
         {/* Content Sections - Scroll Revealed */}
         <div className="relative z-10">
+          <ScrollSection className="bg-background/50 backdrop-blur-sm">
+            <TrustedBySection />
+          </ScrollSection>
+
           <ScrollSection className="bg-background/50 backdrop-blur-sm">
             <FeaturesSection />
           </ScrollSection>

@@ -1,24 +1,24 @@
 import { Card, CardContent } from "@/components/ui/card"
-import { Zap, Globe, Code } from "lucide-react"
+import { Zap, Globe, Layers } from "lucide-react"
 
 const features = [
   {
     icon: Zap,
-    title: "True Gasless Experience",
+    title: "Gasless by Default",
     description:
-      "Users pay fees in the stablecoin they are sending — no ETH, AVAX, or APT required. The SmoothSend paymaster relayer sponsors gas via ERC-4337 account abstraction.",
+      "Give users seamless transactions without making them manage native gas tokens. SmoothSend handles sponsorship and fee-payer flows behind the scenes.",
   },
   {
     icon: Globe,
-    title: "Multi-Chain Support",
+    title: "Multi-Chain Infrastructure",
     description:
-      "One SDK, four chains: Aptos (sponsored transactions), Avalanche C-Chain, Base (Coinbase L2), and Arbitrum One. Mainnet and testnet supported.",
+      "Use one integration surface across Aptos and EVM networks today. Solana support is already in progress and coming soon.",
   },
   {
-    icon: Code,
-    title: "Developer-Friendly",
+    icon: Layers,
+    title: "Built for Fast Iteration",
     description:
-      "Integrate gasless transfers with @smoothsend/sdk in minutes. Full TypeScript support, React wallet adapter, REST API, and comprehensive documentation.",
+      "Your product keeps moving, so SmoothSend is designed to evolve with your roadmap while keeping your integration stable.",
   },
 ]
 
@@ -28,10 +28,10 @@ export function FeaturesSection() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 id="features-heading" className="text-3xl md:text-4xl font-bold text-balance mb-4">
-            Built for the Future of Web3 Payments
+            Built for fast-moving teams
           </h2>
           <p className="text-xl text-muted-foreground text-balance max-w-2xl mx-auto">
-            ERC-4337 account abstraction and Aptos sponsored transactions — gasless transfers without the complexity
+            Multi-chain gasless infrastructure that stays simple at the integration layer, even as your stack expands.
           </p>
         </div>
 
